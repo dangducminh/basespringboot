@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  backend:
+    container_name: app
+    image: demo-docker:v1
+    ports:
+      - "8000:8000"
+    networks:
+      - demo-docker
+    depends_on:
+      - database
+
+  database:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: staff
+    networks:
+      - demo-docker
+
+volumes:
+  mysql-data:
+networks:
+  demo-docker:
+    driver: bridge
+
+

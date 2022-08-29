@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div style="font-size: 30px; padding-bottom: 15px">Nhân sự EASTGATE</div>
+        <input placeholder="Tên Nhân Sự" aria-describedby="basic-addon1" type="text" class="form-control" id="name">
+        <input type="date" name="begin"
+               placeholder="dd-mm-yyyy" value=""
+               min="1997-01-01" max="2030-12-31" id="birthDate">
+        <select id="sex">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="orther">orther</option>
+        </select>
+        <button class="get" onclick="getAll()">get all staff</button>
+        <button class="get" onclick="add()">add staff</button>
+        <br>
+        <div>
+            <ul id="list-staff"></ul>
+        </div>
+    </div>
+</body>
+</html>
